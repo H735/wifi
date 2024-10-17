@@ -21,6 +21,9 @@
             margin-top: 20px;
             color: green;
         }
+        #heb {
+            font-weight: bold; /* Make text bold */
+        }
     </style>
 </head>
 <body>
@@ -39,10 +42,19 @@
 
     <script>
         function showResponse(answer) {
+            const voiceNote = document.getElementById('voiceNote');
+            const responseDiv = document.getElementById('response');
+            
             if (answer === 'Yes') {
-                document.getElementById('response').textContent = 'hebbalsleep';
+                responseDiv.textContent = ''; // Clear previous response
+                voiceNote.play(); // Play the audio
+
+                // Wait for the audio to finish, then show the messages
+                voiceNote.onended = function() {
+                    responseDiv.innerHTML = 'This time I\'m letting you in myrr <span id="heb">hebbalsleep</span>';
+                };
             } else {
-                document.getElementById('response').textContent = '';
+                responseDiv.textContent = ''; // Clear previous response if 'No' is clicked
             }
         }
     </script>
