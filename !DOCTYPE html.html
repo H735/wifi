@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOMBANO MYRE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #response {
+            font-size: 20px;
+            margin-top: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>OOMBANO MYRE?</h1>
+    <button onclick="showResponse('Yes')">Yes</button>
+    <button onclick="showResponse('No')">No</button>
+
+    <div id="response"></div>
+
+    <script>
+        function showResponse(answer) {
+            if (answer === 'Yes') {
+                document.getElementById('response').textContent = 'hebbalsleep';
+            } else {
+                document.getElementById('response').textContent = '';
+            }
+        }
+    </script>
+
+</body>
+</html>
